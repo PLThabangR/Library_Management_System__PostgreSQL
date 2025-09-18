@@ -17,9 +17,6 @@ select * from authors;
 select * from books;
 select * from patrons;
 
-drop table books;
-drop table patrons;
-drop table authors;
 
 
 -- inser data to author table
