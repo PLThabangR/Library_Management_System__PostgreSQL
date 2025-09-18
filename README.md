@@ -1,12 +1,17 @@
 #  Library Management System using PostgreSQL
 ## The system will manage a collection of books, authors, and patrons. Users are be able to add, view, update, and delete records in the database.
 
-- creating databse
+### To run this project ensure you have installed 
+- PostgreSQL (latest stable version)
+- pgAdmin (optional, GUI)
+  
+- create the database
 ```
 create database libraryDB;
 ```
+- In pgAdmin: Right-click → Query Tool → paste → Execute
 
-- Creating tables using the create keyword
+- Then create tables using the create keyword copy and paste the below statements
 ```
 -- creating database
 create database libraryDB;
@@ -21,8 +26,8 @@ create table books( bookId serial primary key, title varchar(255) not null,autho
 create table patrons(patronId serial primary key,p_name varchar(255),email varchar(255) unique,borrowed_books int[] default '{}');
 ```
 - Inseting values into the table
-  ```
-  -- inser data to author table
+- To insert values in your database copy and paste the below 
+```
 insert into authors(a_name,nationality,birth_year,death_year) values ('George Orwell', 'British', 1903, 1950),
 ('Harper Lee', 'American', 1926, 2016),( 'F. Scott Fitzgerald', 'American', 1896, 1940),
 ('Aldous Huxley', 'British', 1894, 1963),('J.D. Salinger', 'American', 1919, 2010),
@@ -44,7 +49,7 @@ insert into authors(a_name,nationality,birth_year,death_year) values ('George Or
 ( 'The Hobbit', 10, ARRAY['Fantasy'], 1937, TRUE);
 
 
--- Insert data to patrons table
+ Insert data to patrons table
 insert into patrons(p_name,email,borrowed_books)
 values( 'Alice Johnson', 'alice@example.com', ARRAY[]::INT[]),
 ('Bob Smith', 'bob@example.com', ARRAY[1, 2]),
@@ -56,7 +61,9 @@ values( 'Alice Johnson', 'alice@example.com', ARRAY[]::INT[]),
 ( 'Hank Wilson', 'hank@example.com', ARRAY[6]),
 ('Ivy Taylor', 'ivy@example.com', ARRAY[]::INT[]),
 ( 'Jack Anderson', 'jack@example.com', ARRAY[7, 8]);
-  ```
+
+``` 
+
 
 - Read oprations
 ```
