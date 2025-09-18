@@ -91,3 +91,42 @@ update books
 set availability = false 
 where bookid=4;
 ```
+
+- update
+```
+-- make book false by using the bookid
+update books 
+set availability = false 
+where bookid=4;
+
+-- view changes 
+select * from books;
+
+-- Add new new to existing book
+update books 
+set genres = '{beauty}'
+where bookid = 1
+
+
+
+-- Add a borrowed book patron record
+update patrons
+set borrowed_books ='{4}'
+where patronid =3;
+-- View changes
+select * from patrons;
+
+
+```
+
+- delete operation
+```
+delete from books
+where title = 'Moby-Dick';
+
+-- delete by id
+delete from books
+where bookid =1;
+-- view changes 
+select * from books;
+```
